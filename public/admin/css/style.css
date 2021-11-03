@@ -1867,3 +1867,22 @@ span.tagRemove:hover {
 .notification__box .title__noti{
     padding: 15px 0;
 }
+/*  Start my style */
+
+    .error-input{
+        color: red;
+        font-size: 12px;
+        padding-bottom: 10px;
+
+    }
+
+    .btn_delete{
+        cursor: pointer;
+        color: red;
+    }
+    .item-edit:before{
+        cursor: pointer;
+        color: rgb(1, 200, 250);
+        display: block;
+    }
+/*  End my style */
