@@ -18,9 +18,12 @@ class CategoryController extends Controller
 
     public function create()
     {
+        $categories=Category::query()->paginate(5);
 
-        $categories=Category::all();
-        return view('admin.categories.index',compact('categories'));
+
+        $selectCategories=Category::all();
+        
+        return view('admin.categories.index',compact('categories','selectCategories'));
     }
 
     public function store(CategoryCreateRequest $request)

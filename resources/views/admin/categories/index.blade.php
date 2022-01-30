@@ -1,6 +1,40 @@
 
 @extends('admin.layout.app')
 
+
+@section('css')
+
+<style>
+            /* صفجه بندی  */
+    .pagination{
+        width: 100%;
+     }
+     .pagination > .pagination__page{
+     
+         background-color: rgb(255, 255, 255);
+         box-shadow:1px 3px 2px rgba(0, 0, 0, .1);
+         padding: 10px ;
+        
+     
+     }
+     .pagination__page--current{
+         background-color: rgb(56, 163, 252);
+         box-shadow:1px 3px 2px rgba(0, 0, 0, .1);
+         padding: 10px 15px;
+         margin-left: 3px ;
+         color: white;
+     }
+     .pagination__page--prev{
+         background-color: rgb(255, 255, 255);
+         box-shadow:1px 3px 2px rgba(0, 0, 0, .1);
+         padding: 10px;
+         margin-left: 3px ;
+      
+    </style>
+
+
+@endsection
+
 @section('content')
 
     <div class="main-content padding-0 categories">
@@ -85,7 +119,7 @@
                     <select name="patent_id" >
                         <option value selected>دسته پدر ندارد</option>
 
-                        @forelse ($categories as $parent)
+                        @forelse ($selectCategories as $parent)
 
                         <option value="{{ $parent->id }}"> {{ $parent->title_fa }}</option>
                         @empty
@@ -99,6 +133,7 @@
 
             </div>
 
+            {{ $categories->links() }}
 
         </div>
     </div>
