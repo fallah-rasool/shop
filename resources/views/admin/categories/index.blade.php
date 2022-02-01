@@ -10,12 +10,12 @@
         width: 100%;
      }
      .pagination > .pagination__page{
-     
+
          background-color: rgb(255, 255, 255);
          box-shadow:1px 3px 2px rgba(0, 0, 0, .1);
          padding: 10px ;
-        
-     
+
+
      }
      .pagination__page--current{
          background-color: rgb(56, 163, 252);
@@ -29,7 +29,7 @@
          box-shadow:1px 3px 2px rgba(0, 0, 0, .1);
          padding: 10px;
          margin-left: 3px ;
-      
+
     </style>
 
 
@@ -96,42 +96,8 @@
             </div>
 
 
-            <div class="col-4 bg-white">
-                <p class="box__title">ایجاد دسته بندی جدید</p>
-                <form action="{{ route('category.store') }}" method="post" class="padding-30">
-                    @csrf
+            @include('admin.categories.create')
 
-                    <input name="title_fa" type="text" placeholder="نام دسته بندی" class="text">
-
-                    @error('title_fa')
-                    <p class=" error-input"  >   {{$message}}</p>
-                     @enderror
-
-                    <input name="title_en" type="text" placeholder="نام انگلیسی دسته بندی" class="text">
-
-                    @error('title_en')
-                    <p class=" error-input" >   {{$message}}</p>
-                    @enderror
-
-
-                    <p class="box__title margin-bottom-15">انتخاب دسته پدر</p>
-
-                    <select name="patent_id" >
-                        <option value selected>دسته پدر ندارد</option>
-
-                        @forelse ($selectCategories as $parent)
-
-                        <option value="{{ $parent->id }}"> {{ $parent->title_fa }}</option>
-                        @empty
-
-                        @endforelse
-
-                    </select>
-
-                    <button class="btn btn-brand">اضافه کردن</button>
-                </form>
-
-            </div>
 
             {{ $categories->links() }}
 

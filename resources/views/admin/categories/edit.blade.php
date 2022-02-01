@@ -17,13 +17,13 @@
                 @csrf
                 @method('patch')
 
-                <input name="title_fa" value=" {{ $category->title_fa }}" type="text" placeholder="نام دسته بندی" class="text">
+                <input  name="title_fa" value=" {{ $category->title_fa }}" type="text" placeholder="نام دسته بندی" class="text">
 
                 @error('title_fa')
                 <p class=" error-input"  >   {{$message}}</p>
                 @enderror
 
-                <input name="title_en" value=" {{ $category->title_en }}" type="text" placeholder="نام انگلیسی دسته بندی" class="text">
+                <input  name="title_en" value=" {{ $category->title_en }}" type="text" placeholder="نام انگلیسی دسته بندی" class="text">
 
                 @error('title_en')
                 <p class=" error-input" >   {{$message}}</p>

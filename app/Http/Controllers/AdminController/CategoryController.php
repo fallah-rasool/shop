@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminRequest\CategoryCreateRequest;
+use App\Http\Requests\AdminRequest\CategoryUpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
@@ -18,11 +19,9 @@ class CategoryController extends Controller
 
     public function create()
     {
-        $categories=Category::query()->paginate(5);
-
-
+        $categories=Category::query()->paginate();
         $selectCategories=Category::all();
-        
+
         return view('admin.categories.index',compact('categories','selectCategories'));
     }
 
@@ -54,7 +53,7 @@ class CategoryController extends Controller
     }
 
 
-    public function update(Request $request, Category $category)
+    public function update(CategoryUpdateRequest $request, Category $category)
     {
         $category->update([
             'patent_id' =>$request->get('patent_id'),
