@@ -19,8 +19,12 @@
         <li class="item-li i-categories">
             <a href="{{ route('category.create') }}">دسته بندی ها</a>
         </li>
+        <li class="item-li i-banners">
+            <a href="{{ route('brand.create') }}">بنر ها</a>
+        </li>
+
         <li class="item-li i-slideshow"><a href="slideshow.html">اسلایدشو</a></li>
-        <li class="item-li i-banners"><a href="banners.html">بنر ها</a></li>
+
         <li class="item-li i-articles"><a href="articles.html">مقالات</a></li>
         <li class="item-li i-ads"><a href="ads.html">تبلیغات</a></li>
         <li class="item-li i-comments"><a href="comments.html"> نظرات</a></li>

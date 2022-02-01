@@ -1,5 +1,10 @@
 <div class="col-4 bg-white">
     <p class="box__title">ایجاد دسته بندی جدید</p>
+
+    @if(session('success'))
+        <div class="text-success text-center">{{session('success')}}</div>
+    @endif
+
     <form action="{{ route('category.store') }}" method="post" class="padding-30">
         @csrf
 

@@ -3,9 +3,9 @@
 
 
 @section('css')
-
+{{-- صفجه بندی  --}}
 <style>
-            /* صفجه بندی  */
+
     .pagination{
         width: 100%;
      }
@@ -95,7 +95,7 @@
                 </div>
             </div>
 
-
+            {{--new category --}}
             @include('admin.categories.create')
 
 
