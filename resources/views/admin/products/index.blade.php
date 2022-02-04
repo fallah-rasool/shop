@@ -90,7 +90,7 @@
                                 <td><a href="">{{ $product->id }}</a></td>
                                 <td><a href=""> {{ $product->name }}</a></td>
                                 <td>
-                                    <img src="/{{str_replace('public','storage',$product->image)}}"  alt="brand">
+                                    <img width="50" height="50" src="/{{str_replace('public','storage',$product->image)}}"  alt="brand">
 
 
                                 <td><a href=""> {{number_format( $product->price )}}</a></td>
@@ -98,10 +98,10 @@
                              <td><a href=""> {{ $product->category->title_fa }}</a></td>
                                <td><a href=""> {{ $product->brand->name }}</a></td>
                                 <td>
-                                    <a href="{{route('products.edit',$product->id)}}" class="item-edit " title="ویرایش"></a>
+                                    <a href="{{route('product.edit',$product->id)}}" class="item-edit " title="ویرایش"></a>
                                 </td>
                                 <td>
-                                    <form action="{{route('products.destroy',$product->id)}}" method="post">
+                                    <form action="{{route('product.destroy',$product->id)}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn_delete item-delete mlg-15"></button>

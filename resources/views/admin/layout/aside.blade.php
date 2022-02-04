@@ -24,7 +24,7 @@
         </li>
 
         <li class="item-li i-slideshow">
-            <a href="{{route('products.create')}}">محصولات</a>
+            <a href="{{route('product.create')}}">محصولات</a>
         </li>
 
 {{--        <li class="item-li i-articles"><a href="articles.html">مقالات</a></li>--}}

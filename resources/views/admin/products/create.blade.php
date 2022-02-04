@@ -4,7 +4,7 @@
     @if(session('success'))
         <div class="text-success text-center">{{session('success')}}</div>
     @endif
-    <form action="{{ route('products.store') }}" method="post" class="padding-30" enctype="multipart/form-data">
+    <form action="{{ route('product.store') }}" method="post" class="padding-30" enctype="multipart/form-data">
         @csrf
 
         <input value="{{old('name')}}" name="name" type="text" placeholder="نام محصول" class="text">
