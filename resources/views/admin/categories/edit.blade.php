@@ -19,9 +19,12 @@
 
                 <input  name="title_fa" value=" {{ $category->title_fa }}" type="text" placeholder="نام دسته بندی" class="text">
 
-                @error('title_fa')
-                <p class=" error-input"  >   {{$message}}</p>
-                @enderror
+                @if(session()->has('title_fa'))
+                    <p class="error-input">{{Session::get('title_fa')}}</p>
+                @endif
+{{--                @error('title_fa')--}}
+{{--                <p class=" error-input"  >   {{$message}}</p>--}}
+{{--                @enderror--}}
 
                 <input  name="title_en" value=" {{ $category->title_en }}" type="text" placeholder="نام انگلیسی دسته بندی" class="text">
 

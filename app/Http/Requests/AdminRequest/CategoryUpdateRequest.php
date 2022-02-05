@@ -15,8 +15,8 @@ class CategoryUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title_fa' =>'required|unique:categories,title_fa',
-            'title_en' =>'required|nullable|unique:categories,title_en',
+            'title_fa' =>'required',
+            'title_en' =>'nullable',
         ];
     }
 }

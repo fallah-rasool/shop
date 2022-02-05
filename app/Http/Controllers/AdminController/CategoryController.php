@@ -54,6 +54,15 @@ class CategoryController extends Controller
 
     public function update(CategoryUpdateRequest $request, Category $category)
     {
+        $categoryUpdate=Category::query()
+            ->where('title_fa',$request->get('title_fa'))
+            ->where('id','!=',$category->id )
+            ->exists();
+        if($categoryUpdate){
+
+            return back()->with('title_fa','عنوان دسته بندی  تکراری است');
+        }
+
         $category->update([
             'patent_id' =>$request->get('patent_id'),
             'title_fa' =>$request->get('title_fa'),
