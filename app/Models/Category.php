@@ -11,11 +11,19 @@ class Category extends Model
 
     protected $guarded=[];
 
+//    برای نمایش دسته بندی ها در لیست پنل
     public function parent(){
         return $this->belongsTo(Category::class,'patent_id');
     }
-
     public function children(){
         return $this->hasMany(Category::class,'patent_id');
     }
+
+
+    ////// برای نمایش فرزندان دسته بندی ها در صفحه اول سایت/////
+    public  function getAllSubCategoryProducts(){
+          $children=$this->children()->pluck('id');
+          return product::query()->whereIn('category_id',$children)->get();
+    }
+
 }
