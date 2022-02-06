@@ -22,6 +22,7 @@
 <link rel="stylesheet" type="text/css" href="/client/css/stylesheet-skin2.css" />
 
 <!-- CSS Part End-->
+    @yield('links')
 </head>
 <body>
 <div class="wrapper-wide">

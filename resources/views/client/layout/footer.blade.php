@@ -117,7 +117,7 @@
 <script type="text/javascript" src="/client/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/client/js/custom.js"></script>
 <!-- JS Part End-->
-
+@yield('js')
 </body>
 </html>
 

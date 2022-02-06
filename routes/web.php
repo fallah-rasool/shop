@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController\BrandController;
 use App\Http\Controllers\AdminController\CategoryController;
 use App\Http\Controllers\AdminController\PanelController;
 use App\Http\Controllers\AdminController\ProductController;
+use App\Http\Controllers\ClientController\ProductController as ClientProductController;
 use App\Http\Controllers\ClientController\indexController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,8 +23,10 @@ use Illuminate\Support\Facades\Route;
  * client
  **/
 
-Route::get('/',[indexController::class,'index']);
-
+Route::prefix('')->group(function (){
+    Route::get('/',[indexController::class,'index']);
+    Route::get('productDetails/{product}',[ClientProductController::class,'show'])->name('productDetails.show');
+});
 
 /**
  * adminPanel

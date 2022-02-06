@@ -9,12 +9,14 @@
         <div class="row">
             <!--Middle Part Start-->
             <div id="content" class="col-xs-12">
+
                 <!-- Slideshow Start-->
                 <div class="slideshow single-slider owl-carousel">
                     <div class="item"> <a href="#"><img class="img-responsive" src="/client/image/slider/banner-2.jpg" alt="banner 2" /></a> </div>
                     <div class="item"> <a href="#"><img class="img-responsive" src="/client/image/slider/banner-1.jpg" alt="banner 1" /></a> </div>
                 </div>
                 <!-- Slideshow End-->
+
                 <!-- Banner Start-->
                 <div class="marketshop-banner">
                     <div class="row">
@@ -25,6 +27,7 @@
                     </div>
                 </div>
                 <!-- Banner End-->
+
                 <!-- محصولات Tab Start -->
                 <div id="product-tab" class="product-tab">
 
@@ -764,7 +767,8 @@
 
 
 
-                <!-- دسته ها محصولات Slider Start -->
+
+                    <!-- دسته ها محصولات Slider Start -->
                    @foreach($categories as $parentCategory)
                     <h3 class="subtitle">
                         {{$parentCategory->title_fa}} <a class="viewall" href="category.html">نمایش همه</a>
@@ -773,12 +777,18 @@
                         @foreach($parentCategory->getAllSubCategoryProducts() as $product)
                             <div class="product-thumb">
                                 <div class="image">
-                                    <a href="product.html">
-                                        <img src="{{str_replace('public','storage',$product->image)}}" alt="{{$product->name}}" title="{{$product->name}} class="img-responsive" />
+
+                                    <a href="{{route('productDetails.show',$product->id)}}">
+
+                                        <img src="{{str_replace('public','storage',$product->image)}}" alt="{{$product->name}}" title="{{$product->name}}" class="img-responsive" />
                                     </a>
                                 </div>
                                 <div class="caption">
-                                    <h4><a href="product.html">{{$product->name}}</a></h4>
+
+                                    <h4>
+                                        <a href="{{route('productDetails.show',$product->id)}}">{{$product->name}}</a>
+                                    </h4>
+
                                     <p class="price"> {{$product->price}} </p>
                                     <div class="rating">
                                         <span class="fa fa-stack">
@@ -824,8 +834,6 @@
 
 
                     <!-- برند Logo Carousel Start-->
-
-
                     <div id="carousel" class="owl-carousel nxt">
                         @foreach($brands as $brand)
                         <div class="item text-center">
@@ -833,7 +841,6 @@
                                 <img src="{{str_replace('public','storage',$brand->image)}}" alt="{{$brand->name}}" class="img-responsive" />
                             </a>
                         </div>
-
                         @endforeach
                     </div>
                     <!-- برند Logo Carousel End -->
