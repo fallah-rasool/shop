@@ -3,6 +3,8 @@
 @section('link')
     <link rel="stylesheet" type="text/css" href="/client/css/owl.transitions.css" />
     <link rel="stylesheet" type="text/css" href="/client/js/swipebox/src/css/swipebox.min.css">
+
+
 @endsection
 
 
@@ -12,9 +14,21 @@
         <div class="container">
         <!-- Breadcrumb Start-->
         <ul class="breadcrumb">
-            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="index.html" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
-            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="category.html" itemprop="url"><span itemprop="title">الکترونیکی</span></a></li>
-            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="product.html" itemprop="url"><span itemprop="title">لپ تاپ ایلین ور</span></a></li>
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="{{route('index.page')}}" itemprop="url">
+                    <span itemprop="title"><i class="fa fa-home"></i></span>
+                </a>
+            </li>
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="category.html" itemprop="url">
+                    <span itemprop="title">{{$product->category->title_fa }}</span>
+                </a>
+            </li>
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="product.html" itemprop="url">
+                    <span itemprop="title"> {{$product->name }}  </span>
+                </a>
+            </li>
         </ul>
         <!-- Breadcrumb End-->
         <div class="row">

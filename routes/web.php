@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
  **/
 
 Route::prefix('')->group(function (){
-    Route::get('/',[indexController::class,'index']);
+    Route::get('/',[indexController::class,'index'])->name('index.page');
     Route::get('productDetails/{product}',[ClientProductController::class,'show'])->name('productDetails.show');
 });
 

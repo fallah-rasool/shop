@@ -20,6 +20,8 @@
 <link rel="stylesheet" type="text/css" href="/client/css/stylesheet-rtl.css" />
 <link rel="stylesheet" type="text/css" href="/client/css/responsive-rtl.css" />
 <link rel="stylesheet" type="text/css" href="/client/css/stylesheet-skin2.css" />
+<link rel="stylesheet" href="/client/css/font.css">
+<link rel="stylesheet" type="text/css" href="/client/css/mystyle.css" />
 
 <!-- CSS Part End-->
     @yield('links')

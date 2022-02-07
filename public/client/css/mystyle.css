@@ -1,0 +1,18 @@
+/* start  productDetails */
+.breadcrumb {
+    color: #c2c2c2;
+    margin-bottom: 10px;
+    background: none;
+    padding: 10px 5px;
+    border-radius: 0px;
+}
+.breadcrumb a{
+    color: #999;
+    font-size: 14px !important;
+    font-family: irs, serif;
+}
+.title{
+    font-family: irs, serif;
+}
+
+/* end  productDetails */
