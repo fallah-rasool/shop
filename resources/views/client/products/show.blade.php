@@ -1,7 +1,7 @@
 @extends('client.layout.app')
 
 @section('link')
-    <link rel="stylesheet" type="text/css" href="/client/css/owl.transitions.css" />
+
     <link rel="stylesheet" type="text/css" href="/client/js/swipebox/src/css/swipebox.min.css">
 
 
@@ -42,7 +42,7 @@
                         <div class="col-sm-6">
                             <div class="image">
                                 <div style="height:525px;width:350px;" class="zoomWrapper">
-                                    <img class="img-responsive" itemprop="image" id="zoom_01" src="{{str_replace('public','/storage',$product->image)}}" title="لپ تاپ ایلین ور" alt="لپ تاپ ایلین ور" data-zoom-image="{{str_replace('public','/storage',$product->image)}}" style="position: absolute;">
+                                    <img class="img-responsive" itemprop="image" id="zoom_01" src="{{str_replace('public','/storage',$product->image)}}" title="{{$product->name}" alt="{{$product->name}}" data-zoom-image="{{str_replace('public','/storage',$product->image)}}" style="position: absolute;">
                                 </div>
                             </div>
                             <div class="center-block text-center">
@@ -50,17 +50,42 @@
                                     <i class="fa fa-search"></i> برای مشاهده گالری روی تصویر کلیک کنید</span>
                             </div>
                             <div class="image-additional" id="gallery_01">
-                                <a class="thumbnail" href="#" data-zoom-image="image/product/macbook_air_1-600x900.jpg" data-image="image/product/macbook_air_1-350x525.jpg" title="لپ تاپ ایلین ور">
-                                    <img src="image/product/macbook_air_1-66x99.jpg" title="لپ تاپ ایلین ور" alt="لپ تاپ ایلین ور">
+
+                                <a class="thumbnail" href="#"   data-zoom-image="{{str_replace('public','/storage',$product->image)}}"  data-image="{{str_replace('public','/storage',$product->image)}}" title="{{$product->name}}">
+                                        <img style="height: 75px;"
+                                             src="{{str_replace('public','/storage',$product->image)}}"
+                                             title="{{$product->name}}"
+                                             alt="{{$product->name}}">
                                 </a>
-                                <a class="thumbnail" href="#" data-zoom-image="image/product/macbook_air_4-600x900.jpg" data-image="image/product/macbook_air_4-350x525.jpg" title="لپ تاپ ایلین ور">
-                                    <img src="image/product/macbook_air_4-66x99.jpg" title="لپ تاپ ایلین ور" alt="لپ تاپ ایلین ور"></a>
-                                <a class="thumbnail" href="#" data-zoom-image="image/product/macbook_air_2-600x900.jpg" data-image="image/product/macbook_air_2-350x525.jpg" title="لپ تاپ ایلین ور">
-                                    <img src="image/product/macbook_air_2-66x99.jpg" title="لپ تاپ ایلین ور" alt="لپ تاپ ایلین ور"></a>
-                                <a class="thumbnail" href="#" data-zoom-image="image/product/macbook_air_3-600x900.jpg" data-image="image/product/macbook_air_3-350x525.jpg" title="لپ تاپ ایلین ور">
-                                    <img src="image/product/macbook_air_3-66x99.jpg" title="لپ تاپ ایلین ور" alt="لپ تاپ ایلین ور"></a>
+
+
+
+{{--     <a class="thumbnail" href="#"
+                data-zoom-image="image/product/macbook_air_1-600x900.jpg"
+                data-image="image/product/macbook_air_1-350x525.jpg"
+                title="لپ تاپ ایلین ور">
+                <img src="image/product/macbook_air_1-66x99.jpg"
+                title="لپ تاپ ایلین ور"
+                alt="لپ تاپ ایلین ور">
+        </a>--}}
+
+                                @foreach($product->galleries as $gallery)
+                                    <a class="thumbnail" href="#"
+                                       data-zoom-image="{{str_replace('public','/storage',$gallery->path)}}"
+                                       data-image="{{str_replace('public','/storage',$gallery->path)}}"
+                                       title="{{$gallery->product->name}}">
+                                        <img style="height: 75px;"
+                                             src="{{str_replace('public','/storage',$gallery->path)}}"
+                                             title="{{$gallery->product->name}}"
+                                             alt="{{$gallery->product->name}}">
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
+
+
+
+
                         <div class="col-sm-6">
                             <ul class="list-unstyled description">
                                 <li> <b>برند :</b>

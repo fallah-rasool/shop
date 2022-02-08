@@ -25,7 +25,7 @@
     @if(session('success'))
         <div class="text-success text-center">{{session('success')}}</div>
     @endif
-    <form action="{{ route('product.update',$product->id) }}" method="post" class="padding-30" enctype="multipart/form-data">
+    <form action="{{ route('product.update',$product) }}" method="post" class="padding-30" enctype="multipart/form-data">
         @csrf
         @method('patch')
 

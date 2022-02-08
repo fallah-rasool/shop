@@ -27,10 +27,10 @@ class Product extends Model
 //    upload img to gallery
     public function addGallery(Request $request)
     {
-        $name_product=time().'.'.$request->file('file')->getClientOriginalExtension();
+        $name_product=time().'.'.$request->file('file')->getClientOriginalName();
 
         $path = $request->file('file')->storeAs(
-            'public/productGallery',$name_product,
+            'public/productGallery/',$name_product,
         );
         $this->galleries()->create([
             'product_id' => $this->id,
