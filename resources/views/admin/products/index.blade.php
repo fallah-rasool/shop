@@ -81,6 +81,7 @@
                             <th> برند</th>
                             <th>  دسته</th>
                             <th> تاریخ ایجاد</th>
+                            <th>  گالری </th>
                             <th>ویرایش</th>
                             <th>حذف</th>
                         </tr>
@@ -99,6 +100,10 @@
                              <td><a href=""> {{ $product->category->title_fa }}</a></td>
                                <td><a href=""> {{ $product->brand->name }}</a></td>
                                 <td><a href=""> {{Verta::instance($product->created_at)->format('Y-n-j')  }}</a></td>
+                                <td>
+                                <a href="{{route('product.gallery.index',$product->id)}}">مشاهده </a>
+
+                                </td>
                                 <td>
                                     <a href="{{route('product.edit',$product->id)}}" class="item-edit " title="ویرایش"></a>
                                 </td>
