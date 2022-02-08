@@ -101,14 +101,14 @@
                                <td><a href=""> {{ $product->brand->name }}</a></td>
                                 <td><a href=""> {{Verta::instance($product->created_at)->format('Y-n-j')  }}</a></td>
                                 <td>
-                                <a href="{{route('product.gallery.index',$product->id)}}">مشاهده </a>
+                                <a href="{{route('product.gallery.index',$product)}}">مشاهده </a>
 
                                 </td>
                                 <td>
-                                    <a href="{{route('product.edit',$product->id)}}" class="item-edit " title="ویرایش"></a>
+                                    <a href="{{route('product.edit',$product)}}" class="item-edit " title="ویرایش"></a>
                                 </td>
                                 <td>
-                                    <form action="{{route('product.destroy',$product->id)}}" method="post">
+                                    <form action="{{route('product.destroy',$product)}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn_delete item-delete mlg-15"></button>

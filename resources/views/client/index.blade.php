@@ -778,7 +778,7 @@
                             <div class="product-thumb">
                                 <div class="image">
 
-                                    <a href="{{route('productDetails.show',$product->id)}}">
+                                    <a href="{{route('productDetails.show',$product)}}">
 
                                         <img src="{{str_replace('public','storage',$product->image)}}" alt="{{$product->name}}" title="{{$product->name}}" class="img-responsive" />
                                     </a>
@@ -786,7 +786,7 @@
                                 <div class="caption">
 
                                     <h4>
-                                        <a href="{{route('productDetails.show',$product->id)}}">{{$product->name}}</a>
+                                        <a href="{{route('productDetails.show',$product)}}">{{$product->name}}</a>
                                     </h4>
 
                                     <p class="price"> {{$product->price}} </p>

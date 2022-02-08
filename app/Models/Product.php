@@ -38,4 +38,9 @@ class Product extends Model
            'mime' => $request->file('file')->getClientMimeType(),
          ]);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

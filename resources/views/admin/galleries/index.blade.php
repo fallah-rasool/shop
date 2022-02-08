@@ -8,7 +8,7 @@
         <p class="box__title">ایجاد گالری برای <b> {{$product->name}}</b></p>
         <div class="row no-gutters bg-white">
             <div class="col-12">
-                <form action="{{route('product.gallery.store',$product->id)}}" method="post" class="dropzone">
+                <form action="{{route('product.gallery.store',$product)}}" method="post" class="dropzone">
                     @csrf
                     <div class="fallback">
                             <input type="file" name="file" multiple>
