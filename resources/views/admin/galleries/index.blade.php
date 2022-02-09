@@ -34,7 +34,8 @@
                                 <img class="m-5"  width="150" height="150" src="{{str_replace('public','/storage',$gallery->path)}}" alt="{{$gallery->product->name}}">
                                 <div class="">
 
-                                    <form action="" method="post">
+                                    <form
+                                        action="{{route('product.gallery.destroy',['product'=>$product,'gallery'=>$gallery])}} " method="post">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn_delete item-delete mlg-15"></button>

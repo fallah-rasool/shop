@@ -4,8 +4,10 @@ namespace App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminRequest\ProductGalleryRequest;
+use App\Models\Gallery;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -44,8 +46,10 @@ class GalleryController extends Controller
         //
     }
 
-    public function destroy(Product $product)
+    public function destroy(Product $product,Gallery $gallery)
     {
-        //
+     $product->deleteGallery($gallery);
+
+       return back();
     }
 }

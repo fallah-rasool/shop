@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class Product extends Model
 {
@@ -27,7 +28,7 @@ class Product extends Model
 //    upload img to gallery
     public function addGallery(Request $request)
     {
-        $name_product=time().'.'.$request->file('file')->getClientOriginalName();
+        $name_product=time().$request->file('file')->getClientOriginalName();
 
         $path = $request->file('file')->storeAs(
             'public/productGallery/',$name_product,
@@ -37,6 +38,12 @@ class Product extends Model
             'path' => $path,
            'mime' => $request->file('file')->getClientMimeType(),
          ]);
+    }
+//    delete img to gallery
+    public function deleteGallery(Gallery $gallery )
+    {
+        Storage::delete($gallery->path);
+        $gallery->delete();
     }
 
     public function getRouteKeyName()
