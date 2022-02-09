@@ -82,6 +82,7 @@
                             <th>  دسته</th>
                             <th> تاریخ ایجاد</th>
                             <th>  گالری </th>
+                            <th>  تخفیف ها </th>
                             <th>ویرایش</th>
                             <th>حذف</th>
                         </tr>
@@ -102,7 +103,9 @@
                                 <td><a href=""> {{Verta::instance($product->created_at)->format('Y-n-j')  }}</a></td>
                                 <td>
                                 <a href="{{route('product.gallery.index',$product)}}">مشاهده </a>
-
+                                </td>
+                                <td>
+                                    <a href="{{route('product.discount.create',$product)}}">تخفیف </a>
                                 </td>
                                 <td>
                                     <a href="{{route('product.edit',$product)}}" class="item-edit " title="ویرایش"></a>

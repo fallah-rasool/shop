@@ -24,6 +24,12 @@ class Product extends Model
     {
         return $this->hasMany(Gallery::class);
     }
+    public function discount()
+    {
+        return $this->hasOne(Discount::class);
+    }
+
+
 
 //    upload img to gallery
     public function addGallery(Request $request)
@@ -45,6 +51,24 @@ class Product extends Model
         Storage::delete($gallery->path);
         $gallery->delete();
     }
+
+    // add  Discount
+    public function addDiscount(Request $request)
+    {
+        if(!$this->discount()->exists()){
+            $this->discount()->create([
+                'product_id'=>$this->id,
+                'value'=>$request->get('value'),
+            ]);
+        }else{
+                $this->discount->update([
+                    'product_id'=>$this->id,
+                    'value'=>$request->get('value'),
+                ]);
+            }
+    }
+
+
 
     public function getRouteKeyName()
     {

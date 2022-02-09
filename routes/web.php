@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController\BrandController;
 use App\Http\Controllers\AdminController\CategoryController;
+use App\Http\Controllers\AdminController\DiscountController;
 use App\Http\Controllers\AdminController\GalleryController;
 use App\Http\Controllers\AdminController\PanelController;
 use App\Http\Controllers\AdminController\ProductController;
@@ -39,5 +40,6 @@ Route::prefix('adminPanel')->group(function () {
     Route::resource('/brand',BrandController::class);
     Route::resource('/product',ProductController::class);
     Route::resource('/product.gallery',GalleryController::class);
+    Route::resource('/product.discount',DiscountController::class);
 });
 
