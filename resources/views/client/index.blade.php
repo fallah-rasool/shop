@@ -750,6 +750,7 @@
                                 <div class="caption">
                                 <h4><a href="product.html">پخش کننده موزیک</a></h4>
                                 <p class="price"> 122000 تومان </p>
+
                                 </div>
                                 <div class="button-group">
                                 <button class="btn-primary" type="button" onClick=""><span>افزودن به سبد</span></button>
@@ -789,7 +790,23 @@
                                         <a href="{{route('productDetails.show',$product)}}">{{$product->name}}</a>
                                     </h4>
 
-                                    <p class="price"> {{$product->price}} </p>
+                                    <p class="price">
+                                        @if ($product->discount()->exists())
+                                            <span class="price-new">
+                                                {{number_format($product->priceWhitDiscount())}} تومان
+                                            </span>
+                                            <span class="price-old">
+                                                {{number_format($product->price)}} تومان
+                                            </span>
+                                            <span class="saving">
+                                                {{$product->discount->value}} %
+                                            </span>
+                                        @else
+                                        <span class="price-new">
+                                            {{number_format($product->price)}} تومان
+                                        </span>
+                                        @endif
+                                </p>
                                     <div class="rating">
                                         <span class="fa fa-stack">
                                             <i class="fa fa-star fa-stack-2x"></i>

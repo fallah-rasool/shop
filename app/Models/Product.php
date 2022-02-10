@@ -68,6 +68,14 @@ class Product extends Model
             }
     }
 
+    //show Discount in index page
+    public function priceWhitDiscount()
+    {
+        if(!$this->discount()->exists()){
+            return $this->price;
+        }
+        return  $this->price - $this->price * $this->discount->value /100;
+    }
 
 
     public function getRouteKeyName()
