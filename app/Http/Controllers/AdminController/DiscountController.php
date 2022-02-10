@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminRequest\DiscountRequest;
+use App\Models\Discount;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -31,21 +32,26 @@ class DiscountController extends Controller
 
     public function show(Product $product)
     {
-        //
+
     }
 
-    public function edit(Product $product)
+    public function edit(Product $product,Discount $discount)
     {
-        //
+        return view('admin.discounts.edit',[
+            'product'=>$product,
+            'discount'=>$discount,
+        ]);
     }
 
-    public function update(Request $request, Product $product)
+    public function update( Product $product ,DiscountRequest $request)
     {
-        //
+        $product->addDiscount($request);
+        return redirect(route('product.create'));
     }
 
     public function destroy(Product $product)
     {
-        //
+        $product->discount()->delete();
+        return back();
     }
 }

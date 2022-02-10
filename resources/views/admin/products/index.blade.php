@@ -105,16 +105,32 @@
                                 <a href="{{route('product.gallery.index',$product)}}">مشاهده </a>
                                 </td>
                                 <td>
-                                    <a href="{{route('product.discount.create',$product)}}">تخفیف </a>
+                                    @if ($product->discount()->exists())
+                                          <div style="text-align: center">
+                                              {{ $product->discount->value}} %</div>
+                                         <div style="text-align: center">
+                                             <form action="{{route('product.discount.destroy',['product'=>$product,'discount'=>$product->discount]) }}" method="post" style="text-align: center">
+                                                 @csrf
+                                                 @method('delete')
+                                                 <button title="حذف تخفیف" style="text-align:center;margin: 0" type="submit" class="btn_delete item-delete mlg-15"></button>
+                                             </form>
+                                             <div style="text-align: center">
+                                             <a href="{{route('product.discount.edit',['product'=>$product,'discount'=>$product->discount])}}" class="item-edit " title=" تخفیف ویرایش"></a>
+                                             </div>
+                                         </div>
+
+                                    @else
+                                        <a href="{{route('product.discount.create',$product)}}">تخفیف </a>
+                                    @endif
                                 </td>
                                 <td>
-                                    <a href="{{route('product.edit',$product)}}" class="item-edit " title="ویرایش"></a>
+                                    <a href="{{route('product.edit',$product)}}" class="item-edit " title=" ویرایش محصول "></a>
                                 </td>
                                 <td>
                                     <form action="{{route('product.destroy',$product)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn_delete item-delete mlg-15"></button>
+                                        <button title="حذف محصول"type="submit" class="btn_delete item-delete mlg-15"></button>
                                     </form>
                                 </td>
                             </tr>
