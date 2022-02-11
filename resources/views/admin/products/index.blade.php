@@ -105,9 +105,9 @@
                                 <a href="{{route('product.gallery.index',$product)}}">مشاهده </a>
                                 </td>
                                 <td>
-                                    @if ($product->discount()->exists())
+                                    @if ($product->Has_Discount)
                                           <div style="text-align: center">
-                                              {{ $product->discount->value}} %</div>
+                                              {{ $product->discount_value}} %</div>
                                          <div style="text-align: center">
                                              <form action="{{route('product.discount.destroy',['product'=>$product,'discount'=>$product->discount]) }}" method="post" style="text-align: center">
                                                  @csrf
@@ -120,7 +120,7 @@
                                          </div>
 
                                     @else
-                                        <a href="{{route('product.discount.create',$product)}}">تخفیف </a>
+                                        <a href="{{route('product.discount.create',$product)}}">ایحاد تخفیف</a>
                                     @endif
                                 </td>
                                 <td>

@@ -791,15 +791,15 @@
                                     </h4>
 
                                     <p class="price">
-                                        @if ($product->discount()->exists())
+                                        @if ($product->Has_Discount)
                                             <span class="price-new">
-                                                {{number_format($product->priceWhitDiscount())}} تومان
+                                                {{number_format($product->price_whit_discount)}} تومان
                                             </span>
                                             <span class="price-old">
                                                 {{number_format($product->price)}} تومان
                                             </span>
                                             <span class="saving">
-                                                {{$product->discount->value}} %
+                                                {{$product->discount_value}} %
                                             </span>
                                         @else
                                         <span class="price-new">

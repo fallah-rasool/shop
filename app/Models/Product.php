@@ -69,7 +69,7 @@ class Product extends Model
     }
 
     //show Discount in index page
-    public function priceWhitDiscount()
+    public function getPriceWhitDiscountAttribute()
     {
         if(!$this->discount()->exists()){
             return $this->price;
@@ -77,6 +77,16 @@ class Product extends Model
         return  $this->price - $this->price * $this->discount->value /100;
     }
 
+    public function getHasDiscountAttribute()
+    {
+     return $this->discount()->exists();
+    }
+    public function getDiscountValueAttribute(){
+        if($this->has_discount){
+            return $this->discount->value;
+        }
+        return null;
+    }
 
     public function getRouteKeyName()
     {
