@@ -42,7 +42,7 @@
                         <div class="col-sm-6">
                             <div class="image">
                                 <div style="height:525px;width:350px;" class="zoomWrapper">
-                                    <img class="img-responsive" itemprop="image" id="zoom_01" src="{{str_replace('public','/storage',$product->image)}}" title="{{$product->name}" alt="{{$product->name}}" data-zoom-image="{{str_replace('public','/storage',$product->image)}}" style="position: absolute;">
+                                    <img class="img-responsive" itemprop="image" id="zoom_01" src="{{str_replace('public','/storage',$product->image)}}" title="{{$product->name}}" alt="{{$product->name}}" data-zoom-image="{{str_replace('public','/storage',$product->image)}}" style="position: absolute;">
                                 </div>
                             </div>
                             <div class="center-block text-center">
@@ -95,11 +95,21 @@
                                 <li><b>امتیازات خرید:</b> 700</li>
                                 <li><b>وضعیت موجودی :</b> <span class="instock">موجود</span></li>
                             </ul>
+
                             <ul class="price-box">
                                 <li class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                                    <span class="price-old">{{$product->price}} میلیون تومان</span>
-                                    <span itemprop="price">{{$product->price}} میلیون تومان<span itemprop="availability" content="موجود"></span>
+
+                                    @if ($product->discount()->exists())
+                                    <span class="price-old">
+                                        {{number_format ($product->price)}}  تومان</span>
+                                    <span itemprop="price">
+                                        {{number_format ($product->priceWhitDiscount())}}  تومان
                                     </span>
+                                    @else
+                                        <span itemprop="price">{{number_format ($product->priceWhitDiscount())}}  تومان
+                                    </span>
+                                    @endif
+                                       <span itemprop="availability" content="موجود"></span>
                                 </li>
                                 <li></li>
                                 <li>بدون مالیات : 9 میلیون تومان</li>
