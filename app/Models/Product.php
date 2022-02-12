@@ -18,7 +18,6 @@ class Product extends Model
     public function brand(){
       return  $this->belongsTo(Brand::class);
     }
-
 //    gallery
     public function galleries(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
@@ -29,9 +28,7 @@ class Product extends Model
         return $this->hasOne(Discount::class);
     }
 
-
-
-//    upload img to gallery
+    //    upload img to gallery
     public function addGallery(Request $request)
     {
         $name_product=time().$request->file('file')->getClientOriginalName();

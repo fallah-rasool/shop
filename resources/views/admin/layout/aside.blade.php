@@ -26,7 +26,9 @@
         <li class="item-li i-slideshow">
             <a href="{{route('product.create')}}">محصولات</a>
         </li>
-
+        <li class="item-li i-articles">
+            <a href="{{route('role.create')}}">نقش ها </a>
+        </li>
 {{--        <li class="item-li i-articles"><a href="articles.html">مقالات</a></li>--}}
 {{--        <li class="item-li i-ads"><a href="ads.html">تبلیغات</a></li>--}}
 {{--        <li class="item-li i-comments"><a href="comments.html"> نظرات</a></li>--}}
