@@ -19,7 +19,7 @@ class RoleController extends Controller
     public function create()
     {
         return view('admin.roles.index',[
-            'roles'=>Role::all(),
+            'roles'=>Role::query()->paginate(),
             'permissions'=>Permission::all(),
         ]);
     }
@@ -40,18 +40,29 @@ class RoleController extends Controller
 
     public function edit(Role $role)
     {
-        //
+       return view('admin.roles.edit',[
+           'role'=>$role,
+           'permissions'=>Permission::all(),
+       ]);
     }
 
 
-    public function update(Request $request, Role $role)
+    public function update(RoleCreateRequest $request, Role $role)
     {
-        //
+
+
+        $role->update([
+            'title'=> $request->get('title'),
+        ]);
+        $role->permissions()->sync($request->get('permissions'));
+        return back()->with('success','نقش ها با موفقیت به روز رسانی اضافه شد ');
     }
 
 
     public function destroy(Role $role)
     {
-        //
+        $role->permissions()->detach();
+        $role->delete();
+        return back();
     }
 }

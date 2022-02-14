@@ -92,7 +92,7 @@
 
             {{--new category --}}
             @include('admin.roles.create')
-{{--           {{ $roles->links() }}--}}
+          {{ $roles->links() }}
 
         </div>
     </div>
