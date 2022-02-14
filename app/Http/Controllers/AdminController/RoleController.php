@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminRequest\RoleCreateRequest;
 use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class RoleController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(RoleCreateRequest $request)
     {
         $role=Role::query()->create([
             'title'=>$request->get('title'),
