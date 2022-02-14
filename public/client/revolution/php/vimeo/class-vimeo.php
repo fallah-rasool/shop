@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Vimeo
@@ -27,15 +27,15 @@ class TP_vimeo {
 	 */
 	public function get_vimeo_videos($type,$value){
 		//call the API and decode the response
-		if($type=="user"){
+		if($type=="users"){
 			$url = "https://vimeo.com/api/v2/".$value."/videos.json";
 		}
 		else{
 			$url = "https://vimeo.com/api/v2/".$type."/".$value."/videos.json";
 		}
-		
+
 		$rsp = json_decode(file_get_contents($url));
-		
+
 		return $rsp;
 	}
 
@@ -66,7 +66,7 @@ class TP_vimeo {
 			$stream['content'] = $video->description;
 			$stream['date_modified'] = $video->upload_date;
 			$stream['author_name'] = $video->user_name;
-			
+
 			$this->stream[] = $stream;
 		}
 	}

@@ -349,7 +349,7 @@ var Dropzone = function (_Emitter) {
         /**
          * If false, files will be added to the queue but the queue will not be
          * processed automatically.
-         * This can be useful if you need some additional user input before sending
+         * This can be useful if you need some additional users input before sending
          * files (or if you want want all files sent at once).
          * If you're ready to send the file simply call `myDropzone.processQueue()`.
          *
@@ -471,7 +471,7 @@ var Dropzone = function (_Emitter) {
         dictRemoveFile: "Remove file",
 
         /**
-         * If this is not null, then the user will be prompted before removing a file.
+         * If this is not null, then the users will be prompted before removing a file.
          */
         dictRemoveFileConfirmation: null,
 
@@ -699,7 +699,7 @@ var Dropzone = function (_Emitter) {
 
         /*
          Those functions register themselves to the events on init and handle all
-         the user interface specific stuff. Overwriting them won't break the upload
+         the users interface specific stuff. Overwriting them won't break the upload
          but can break the way it's displayed.
          You can overwrite them if you don't like the default behavior. If you just
          want to add an additional event handler, register it on the dropzone object
@@ -1907,7 +1907,7 @@ var Dropzone = function (_Emitter) {
       });
     }
 
-    // Can be called by the user to remove a file
+    // Can be called by the users to remove a file
 
   }, {
     key: "removeFile",
@@ -2463,7 +2463,7 @@ var Dropzone = function (_Emitter) {
         }
       }
 
-      // Let the user add additional data if necessary
+      // Let the users add additional data if necessary
       for (var _iterator23 = files, _isArray23 = true, _i25 = 0, _iterator23 = _isArray23 ? _iterator23 : _iterator23[Symbol.iterator]();;) {
         var _ref22;
 
@@ -3130,7 +3130,7 @@ Dropzone.getElements = function (els, name) {
   return elements;
 };
 
-// Asks the user the question and calls accepted or rejected accordingly
+// Asks the users the question and calls accepted or rejected accordingly
 //
 // The default implementation just uses `window.confirm` and then calls the
 // appropriate callback.

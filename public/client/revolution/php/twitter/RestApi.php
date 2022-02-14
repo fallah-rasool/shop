@@ -76,7 +76,7 @@ class RestApi
     }
 
     /**
-     * Connect to Twitter API as user.
+     * Connect to Twitter API as users.
      * @link https://dev.twitter.com/docs/auth/oauth/single-user-with-examples
      *
      * @return \TwitterPhp\Connection\User

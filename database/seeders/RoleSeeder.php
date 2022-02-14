@@ -21,10 +21,10 @@ class RoleSeeder extends Seeder
         $superAdmin->permissions()->attach(Permission::all());
 
         /**
-         * normal-user roles
+         * normal-users roles
          */
         Role::query()->insert([
-            'title' => 'normal-user',
+            'title' => 'normal-users',
         ]);
     }
 }

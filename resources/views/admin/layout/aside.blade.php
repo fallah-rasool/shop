@@ -15,7 +15,7 @@
 {{--            <a href="{{ route('index') }}">پیشخوان</a>--}}
 {{--        </li>--}}
 {{--        <li class="item-li i-courses "><a href="courses.html">دوره ها</a></li>--}}
-{{--        <li class="item-li i-users"><a href="users.html"> کاربران</a></li>--}}
+
         <li class="item-li i-categories">
             <a href="{{ route('category.create') }}">دسته بندی ها</a>
         </li>
@@ -29,6 +29,10 @@
         <li class="item-li i-articles">
             <a href="{{route('role.create')}}">نقش ها </a>
         </li>
+        <li class="item-li i-users">
+            <a href="{{route('user.create')}}"> کاربران</a>
+        </li>
+
 {{--        <li class="item-li i-articles"><a href="articles.html">مقالات</a></li>--}}
 {{--        <li class="item-li i-ads"><a href="ads.html">تبلیغات</a></li>--}}
 {{--        <li class="item-li i-comments"><a href="comments.html"> نظرات</a></li>--}}
@@ -40,7 +44,7 @@
 {{--        <li class="item-li i-my__purchases"><a href="mypurchases.html">خرید های من</a></li>--}}
 {{--        <li class="item-li i-notification__management"><a href="notification-management.html">مدیریت اطلاع رسانی</a>--}}
 {{--        </li>--}}
-{{--        <li class="item-li i-user__inforamtion"><a href="user-information.html">اطلاعات کاربری</a></li>--}}
+{{--        <li class="item-li i-user__inforamtion"><a href="users-information.html">اطلاعات کاربری</a></li>--}}
     </ul>
 
 </div>

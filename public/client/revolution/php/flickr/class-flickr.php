@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Flickr
@@ -35,7 +35,7 @@ class TP_flickr {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $url    Url to fetch user from
+	 * @var      string    $url    Url to fetch users from
 	 */
 	private $flickr_url;
 
@@ -85,7 +85,7 @@ class TP_flickr {
 			'method'  => 'flickr.urls.lookupUser',
   			'url' => $user_url,
 		);
-		
+
 		//set User Url
 		$this->flickr_url = $user_url;
 
@@ -106,7 +106,7 @@ class TP_flickr {
 			'method'  => 'flickr.urls.lookupGroup',
   			'url' => $group_url,
 		);
-		
+
 		//set User Url
 		$this->flickr_url = $group_url;
 
@@ -131,7 +131,7 @@ class TP_flickr {
   			'per_page'=> $item_count,
   			'page' => 1
 		);
-		
+
 		//get photo list
 		$public_photos_list = $this->call_flickr_api($public_photo_params);
 		return $public_photos_list->photos->photo;
@@ -152,7 +152,7 @@ class TP_flickr {
   			'per_page'=> $item_count,
   			'page'    => 1
 		);
-		
+
 		//get photoset list
 		$photo_sets_list = $this->call_flickr_api($photo_set_params);
 		return $photo_sets_list->photosets->photoset;
@@ -174,7 +174,7 @@ class TP_flickr {
   			'page'    		=> 1,
   			'extras'		=> 'license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o'
 		);
-		
+
 		//get photo list
 		$photo_set_photos = $this->call_flickr_api($photo_set_params);
 		return $photo_set_photos->photoset->photo;
@@ -196,7 +196,7 @@ class TP_flickr {
   			'page'    		=> 1,
   			'extras'		=> 'license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o'
 		);
-		
+
 		//get photo list
 		$group_pool_photos = $this->call_flickr_api($group_pool_params);
 		return $group_pool_photos->photos->photo;
@@ -215,7 +215,7 @@ class TP_flickr {
 			'method'  => 'flickr.urls.lookupGallery',
   			'url' => $gallery_url,
 		);
-		
+
 		//get gallery info
 		$gallery_info = $this->call_flickr_api($gallery_params);
 		return $gallery_info->gallery->id;
@@ -237,7 +237,7 @@ class TP_flickr {
   			'per_page'=> $item_count,
   			'page' => 1
 		);
-		
+
 		//get photo list
 		$gallery_photos_list = $this->call_flickr_api($gallery_photo_params);
 		return $gallery_photos_list->photos->photo;

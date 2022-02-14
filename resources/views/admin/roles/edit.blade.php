@@ -60,7 +60,8 @@
                          </div>
                      </div>
                      @endif
-            <p class="box__title">ایجاد نقش جدید</p>
+            <p class="box__title">ویرایش نقش
+                <b>{{$role->title}} </b></p>
 
             <form action="{{ route('role.update',$role) }}" method="post" class="padding-30" >
                 @csrf
