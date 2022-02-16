@@ -16,20 +16,20 @@
 {{--        </li>--}}
 {{--        <li class="item-li i-courses "><a href="courses.html">دوره ها</a></li>--}}
 
-        <li class="item-li i-categories">
+        <li class="item-li i-categories @if(request()->routeIs('category.create'))is-active  @endif" >
             <a href="{{ route('category.create') }}">دسته بندی ها</a>
         </li>
-        <li class="item-li i-banners">
+        <li class="item-li i-banners @if(request()->routeIs('brand.create'))is-active  @endif">
             <a href="{{ route('brand.create') }}">بنر ها</a>
         </li>
 
-        <li class="item-li i-slideshow">
+        <li class="item-li i-slideshow @if(request()->routeIs('product.create'))is-active  @endif">
             <a href="{{route('product.create')}}">محصولات</a>
         </li>
-        <li class="item-li i-articles">
+        <li class="item-li i-articles @if(request()->routeIs('role.create'))is-active  @endif">
             <a href="{{route('role.create')}}">نقش ها </a>
         </li>
-        <li class="item-li i-users">
+        <li class="item-li i-users @if(request()->routeIs('user.create'))is-active  @endif">
             <a href="{{route('user.create')}}"> کاربران</a>
         </li>
 
