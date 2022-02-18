@@ -21,4 +21,11 @@ class Role extends Model
             ->where('id',$permission->id)
             ->exists();
     }
+
+
+    public static function findByTitle($title){
+        return self::query()->whereTitle('normal-user',$title)->firstOrFail();
+    }
+
+
 }

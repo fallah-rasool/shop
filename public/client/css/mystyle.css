@@ -14,5 +14,8 @@
 .title{
     font-family: irs, serif;
 }
-
+.error-input{
+    color: red;
+    font-weight: bold;
+}
 /* end  productDetails */

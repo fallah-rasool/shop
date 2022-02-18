@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminController\RoleController;
 use App\Http\Controllers\AdminController\UserController;
 use App\Http\Controllers\ClientController\ProductController as ClientProductController;
 use App\Http\Controllers\ClientController\indexController;
+use App\Http\Controllers\ClientController\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,10 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('')->group(function (){
     Route::get('/',[indexController::class,'index'])->name('index.page');
     Route::get('productDetails/{product}',[ClientProductController::class,'show'])->name('productDetails.show');
+    Route::get('register',[RegisterController::class,'create'])->name('register');
+    Route::post('register/sendmail',[RegisterController::class,'sendmail'])->name('register.sendmail');
+
+    Route::get('register/otp',[RegisterController::class,'otp'])->name('register.otp');
 });
 
 /**

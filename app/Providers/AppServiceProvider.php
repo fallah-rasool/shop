@@ -25,8 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       view()->composer(['client.index','client.products.show'],function ($view){
-
+       view()->composer(['client.index','client.products.show','client.register.create'],function ($view){
            $view->with([
                'categories'=>Category::query()->where('patent_id',null)->get(),
                 'brands'=>Brand::all(),
