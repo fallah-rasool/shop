@@ -100,8 +100,14 @@
           </div>
           <div id="top-links" class="nav pull-right flip">
             <ul>
-              <li><a href="">ورود</a></li>
-              <li><a href="{{route('register')}}">ثبت نام</a></li>
+                @if(!auth())
+                    <li><a href="">ورود</a></li>
+                    <li><a href="{{route('register')}}">ثبت نام</a></li>
+                @else
+                    <li><a href="">پنل کاربری</a></li>
+                    <li><a href=""> خوش امدید</a></li>
+                @endif
+
             </ul>
           </div>
         </div>
