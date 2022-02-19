@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="image/favicon.png" rel="icon" />
-<title>مارکت شاپ - قالب HTML فروشگاهی</title>
+<title>  @yield('title.page')فروشگاه </title>
 <meta name="description" content="Responsive and clean html template design for any kind of ecommerce webshop">
 <!-- CSS Part Start-->
 <link rel="stylesheet" type="text/css" href="/client/js/bootstrap/css/bootstrap.min.css" />
@@ -98,15 +98,19 @@
               </ul>
             </div>
           </div>
-          <div id="top-links" class="nav pull-right flip">
+          <div id="top-links" class="nav pull-right flip " style="margin-top: 5px">
             <ul>
-                @if(!auth())
-                    <li><a href="">ورود</a></li>
-                    <li><a href="{{route('register')}}">ثبت نام</a></li>
-                @else
+                @auth
+                    <form action="{{route('logout')}}" mrthod="post" >
+                        @csrf
+                        @method('delete')
+                        <input class="btn btn-sm btn-danger m-5 " style="border-radius: 5px" type="submit" name="logout" value="خروج">
+                    </form>
                     <li><a href="">پنل کاربری</a></li>
-                    <li><a href=""> خوش امدید</a></li>
-                @endif
+                @else
+                     <li><a href="{{route('register')}}">ثبت نام/ورود</a></li
+                @endauth
+
 
             </ul>
           </div>

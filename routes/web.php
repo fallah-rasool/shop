@@ -37,6 +37,7 @@ Route::prefix('')->group(function (){
 
     Route::get('register/otp/{user}',[RegisterController::class,'otp'])->name('register.otp');
     Route::post('register/verifyOtp/{user}', [RegisterController::class, 'verifyOtp'])->name('register.verifyOtp');
+    Route::get('register/logout', [RegisterController::class,'logout'])->name('logout');
 
 });
 

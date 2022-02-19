@@ -1,4 +1,8 @@
 @extends('client.layout.app')
+
+@section('title.page')
+    تایید کد ارسالی
+@endsection
 @section('content')
 
 

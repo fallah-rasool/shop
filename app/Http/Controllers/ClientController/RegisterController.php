@@ -20,16 +20,10 @@ class RegisterController extends Controller
     public function sendmail(Request $request)
     {
         $this->validate($request,[
-            'email'=>'required|email|unique:users,email',
+            'email'=>'required|email',
         ]);
-        $otp=random_int(11111,99999);
-      $user=User::query()->create([
-            'email'=>$request->get('email'),
-            'password'=>bcrypt($otp),
-            'role_id'=> Role::findByTitle('normal-user')->id,
-        ]);
-        //send otp by email to user
-        Mail::to($user->email)->send(new OtpMail($otp));
+
+        $user=User::generateOtp($request);
 
         return redirect(route('register.otp',$user));
     }
@@ -55,6 +49,11 @@ class RegisterController extends Controller
         return redirect(route('index.page'));
     }
 
+    public function logout()
+    {
+        auth()->logout();
+        return redirect(route('index.page'));
+    }
 
 
 }

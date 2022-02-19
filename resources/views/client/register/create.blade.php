@@ -1,4 +1,9 @@
 @extends('client.layout.app')
+
+@section('title.page')
+    ثبت نام در
+@endsection
+
 @section('content')
 
 
